@@ -1,0 +1,53 @@
+<odoo>
+    <record id="view_crypto_empire_portfolio_form" model="ir.ui.view">
+        <field name="name">crypto.empire.portfolio.form</field>
+        <field name="model">crypto.empire.portfolio</field>
+        <field name="arch" type="xml">
+            <form string="Portfolio">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="portfolio_value" nolabel="1"/>
+                    </group>
+                    <group>
+                        <button name="refresh_coins" string="Refresh"
+                                type="object" class="oe_highlight"/>
+                    </group>
+                    <notebook>
+                        <page string="Your Crypto">
+                            <field name="crypto_empire_portfolio_lines_ids">
+                                <tree string="Coins">
+
+                                    <field name="name"/>
+                                    <field name="quantity"/>
+                                    <field name="price"/>
+                                    <field name="total_price"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_crypto_empire_portfolio_tree" model="ir.ui.view">
+        <field name="name">crypto.empire.portfolio.tree</field>
+        <field name="model">crypto.empire.portfolio</field>
+        <field name="arch" type="xml">
+            <tree string="My Portfolio">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="crypto_empire_portfolio_action" model="ir.actions.act_window">
+        <field name="name">My Portfolio</field>
+        <field name="res_model">crypto.empire.portfolio</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_crypto_empire_portfolio" name="My Portfolio"
+              web_icon="crypto_empire, static/description/icon.png"
+              action="crypto_empire_portfolio_action"/>
+</odoo>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_crypto_empire_portfolio,crypto.empire.portfolio,model_crypto_empire_portfolio,,1,1,1,1
+access_crypto_empire_portfolio_lines,crypto.empire.portfolio.lines,model_crypto_empire_portfolio_lines,,1,1,1,1
+
