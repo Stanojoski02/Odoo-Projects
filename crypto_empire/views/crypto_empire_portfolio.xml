@@ -6,18 +6,29 @@
             <form string="Portfolio">
                 <sheet>
                     <group>
-                        <field name="name"/>
-                        <field name="portfolio_value" nolabel="1"/>
+                        <div class="oe_title">
+                            <h1 style="white-space: nowrap;">
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
                     </group>
                     <group>
-                        <button name="refresh_coins" string="Refresh"
-                                type="object" class="oe_highlight"/>
+                        <group>
+                            <button name="refresh_coins" string="Refresh"
+                                    type="object" class="oe_highlight"/>
+                        </group>
+                        <group>
+                            <div class="oe_title">
+                                <h1>
+                                    <field name="portfolio_value" nolabel="1"/>
+                                </h1>
+                            </div>
+                        </group>
                     </group>
                     <notebook>
                         <page string="Your Crypto">
                             <field name="crypto_empire_portfolio_lines_ids">
                                 <tree string="Coins">
-
                                     <field name="name"/>
                                     <field name="quantity"/>
                                     <field name="price"/>
